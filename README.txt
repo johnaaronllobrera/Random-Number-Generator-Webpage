@@ -10,7 +10,7 @@ This web page generates a random array of integers and displays it along with ar
 
 Files:
 
-- RandomNumberGeneratorIndex.html: HTML file containing the random number generator interface.
+- Index.html: HTML file containing the random number generator interface.
 - style.css: CSS file for styling the random number generator interface.
 
 How to Use:
