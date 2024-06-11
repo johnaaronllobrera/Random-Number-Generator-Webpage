@@ -1,0 +1,77 @@
+body {
+  font-family: 'Courier New';
+  background-color: #1d1d1d;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+
+.header {
+  padding: 20px 0; /* Spacing for header */
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 40px; /* Larger font size for title */
+  color: #ff6d00; /* Orange title color */
+  margin-bottom: 10px;
+  font-family: 'Courier New'; /* Cool gaming font */
+  animation: glow 2s infinite alternate; /* Glowing animation */
+}
+
+.header h3 {
+  font-size: 10px; /* Larger font size for title */
+  color: #ff6d00; /* Orange title color */
+  font-family: 'Courier New'; /* Cool gaming font */
+}
+.output-container {
+  background-color: #000;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  margin: 0 auto;
+  max-width: 600px;
+  margin-top: 20px;
+}
+
+.output-title {
+  font-weight: bold;
+  color: #ff6d00;
+  padding: 5px 10px; /* Adjust padding */
+  border: 2px solid #ff6d00; /* Same border as other elements */
+  border-radius: 5px; /* Rounded corners */
+}
+
+.output-array {
+  font-size: 16px;
+  color: #fff;
+  margin-top: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ff6d00;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: #222;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Courier New';
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 10px rgba(255, 109, 0, 0.5); /* Initial shadow */
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 109, 0, 1); /* Stronger shadow */
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(255, 109, 0, 0.5); /* Return to initial shadow */
+  }
+}

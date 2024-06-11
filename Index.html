@@ -1,0 +1,108 @@
+<!--
+Author: Llobrera, John Aaron B.
+Affiliation: BS Statistics, Institute of Statistics, University of the Philippines Los Baños
+E-Mail: jbllobrera@up.edu.ph
+Code Description:
+  This HTML document generates a random array of integers and displays it along with arrays of numbers 
+  filtered based on divisibility criteria (divisible by 2, 5, or both). It provides a button to 
+  regenerate a new random array.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Number Generator</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="header">
+    <h1>Random Number Generator</h1>
+  </div>
+  <div class="output-container">
+    <div class="output-title">Random Array:</div>
+    <div class="output-array" id="random-array"></div>
+  </div>
+  <div class="output-container">
+    <div class="output-title">Divisible by both 2 and 5:</div>
+    <div class="output-array" id="divisible-by-two-and-five"></div>
+  </div>
+  <div class="output-container">
+    <div class="output-title">Divisible by 2:</div>
+    <div class="output-array" id="divisible-by-two"></div>
+  </div>
+  <div class="output-container">
+    <div class="output-title">Divisible by 5:</div>
+    <div class="output-array" id="divisible-by-five"></div>
+  </div>
+  <div class="output-container">
+    <button id="regenerate-btn">Regenerate a New Random Array</button>
+  </div>
+
+  <script>
+    // Function to generate a random integer between min and max (inclusive)
+    function getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    // Function to generate a random array of integers
+    function generateRandomArray(length) {
+      var randomArray = [];
+      for (var i = 0; i < length; i++) {
+        randomArray.push(getRandomInt(1, 100));
+      }
+      console.log("Generated Random Array:", randomArray); // Log the generated array
+      return randomArray;
+    }
+
+    // Function to filter integers that are divisible by both 2 and 5
+    function filterDivisibleByTwoAndFive(array) {
+      var result = [];
+      for (var i = 0; i < array.length; i++) {
+        if (array[i] % 2 === 0 && array[i] % 5 === 0) {
+          result.push(array[i]);
+        }
+      }
+      console.log("Integers Divisible by both 2 and 5:", result); // Log the filtered result
+      return result;
+    }
+
+    // Function to filter integers that are divisible by 2
+    function filterDivisibleByTwo(array) {
+      var result = [];
+      for (var i = 0; i < array.length; i++) {
+        if (array[i] % 2 === 0) {
+          result.push(array[i]);
+        }
+      }
+      console.log("Integers Divisible by 2:", result); // Log the filtered result
+      return result;
+    }
+
+    // Function to filter integers that are divisible by 5
+    function filterDivisibleByFive(array) {
+      var result = [];
+      for (var i = 0; i < array.length; i++) {
+        if (array[i] % 5 === 0) {
+          result.push(array[i]);
+        }
+      }
+      console.log("Integers Divisible by 5:", result); // Log the filtered result
+      return result;
+    }
+
+    // Function to update the displayed arrays with new random numbers
+    function updateArrays() {
+      var randomArray = generateRandomArray(10);
+      document.getElementById('random-array').innerHTML = randomArray.join(', ');
+      document.getElementById('divisible-by-two-and-five').innerHTML = filterDivisibleByTwoAndFive(randomArray).join(', ');
+      document.getElementById('divisible-by-two').innerHTML = filterDivisibleByTwo(randomArray).join(', ');
+      document.getElementById('divisible-by-five').innerHTML = filterDivisibleByFive(randomArray).join(', ');
+    }
+
+    // Call the updateArrays function when the page is loaded
+    window.onload = updateArrays;
+
+    // Add event listener to the button to regenerate random numbers
+    document.getElementById('regenerate-btn').addEventListener('click', updateArrays);
+  </script>
+</body>
+</html>
